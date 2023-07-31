@@ -1,6 +1,7 @@
 import React from "react";
 import { personalDetailsInput } from "../../utils/personalDetailsUtils";
 import FormInput from "../FormInput";
+import PropTypes from "prop-types";
 
 const PersonalDetailsInput = (props) => {
   const { setPersonalDetails, personalDetails } = props;
@@ -31,6 +32,16 @@ const PersonalDetailsInput = (props) => {
       </form>
     </>
   );
+};
+
+PersonalDetailsInput.propTypes = {
+  personalDetails: PropTypes.shape({
+    fullName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.number.isRequired,
+    address: PropTypes.string.isRequired,
+  }).isRequired,
+  setPersonalDetails: PropTypes.func.isRequired,
 };
 
 export default PersonalDetailsInput;

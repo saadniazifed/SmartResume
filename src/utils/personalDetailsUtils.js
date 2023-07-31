@@ -1,6 +1,3 @@
-// const fullNamePattern =
-//   /^(?![\d!@#$%^&*()_+={}[\]:;"'<>,.?/\\|`~])([\w\s]){1,25}$/;
-
 export const personalDetailsInput = [
   {
     label: "Full Name",
@@ -8,7 +5,6 @@ export const personalDetailsInput = [
     placeholder: "Enter your full name",
     type: "text",
     id: 1,
-    // pattern: fullNamePattern,
     required: true,
     errorMessage:
       "Full Name Should Not Contain Any Numbers Or Special Characters. Max Limit is 25 words.",
@@ -26,7 +22,7 @@ export const personalDetailsInput = [
     label: "Phone Number",
     name: "phoneNumber",
     placeholder: "Enter your phone number",
-    type: "tel",
+    type: "number",
     required: true,
     id: 3,
     errorMessage: "It Should Be A Valid Phone Number. Please Try Again.",
