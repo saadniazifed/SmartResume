@@ -10,13 +10,24 @@ function App() {
     address: "",
   });
 
+  const [educationInfo, setEducationInfo] = useState([
+    {
+      school: "",
+      titleOfStudy: "",
+      startDate: "",
+      endDate: "",
+    },
+  ]);
+
   return (
     <div className="flex justify-evenly min-h-screen">
       <div className="w-2/5 border p-4 bg-gray-100 min-h-screen">
-        <PersonalDetailsInput
-          personalDetails={personalDetails}
-          setPersonalDetails={setPersonalDetails}
-        />
+        <form>
+          <PersonalDetailsInput
+            personalDetails={personalDetails}
+            setPersonalDetails={setPersonalDetails}
+          />
+        </form>
       </div>
       <div className="w-2/5 border p-4 bg-gray-200 min-h-screen">
         <RenderPersonalDetailsInput personalDetails={personalDetails} />
