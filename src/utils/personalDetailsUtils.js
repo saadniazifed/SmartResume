@@ -38,3 +38,41 @@ export const personalDetailsInput = [
   },
 ];
 
+export const educationDetailsInput = [
+  {
+    label: "School",
+    name: "school",
+    placeholder: "Enter your school",
+    type: "text",
+    id: 1,
+    required: true,
+    errorMessage: "School name is required.",
+  },
+  {
+    label: "Title of Study",
+    name: "titleOfStudy",
+    placeholder: "Enter your title of study",
+    type: "text",
+    id: 2,
+    required: true,
+    errorMessage: "Title of study is required.",
+  },
+  {
+    label: "Start Date",
+    name: "startDate",
+    placeholder: "Enter start date",
+    type: "date",
+    id: 3,
+    required: true,
+    errorMessage: "Start date is required.",
+  },
+  {
+    label: "End Date",
+    name: "endDate",
+    placeholder: "Enter end date",
+    type: "date",
+    id: 4,
+    required: true,
+    errorMessage: "End date is required.",
+  },
+];

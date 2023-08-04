@@ -15,15 +15,15 @@ const PersonalDetailsInput = (props) => {
 
   return (
     <>
-      <h3 className="font-san mb-3">Personal Details</h3>
+      <h3 className="text-2xl font-semibold mt-6 mb-3 block">
+        Personal Details
+      </h3>
       {personalDetailsInput.map((input) => (
         <React.Fragment key={input.id}>
           <FormInput
             {...input}
             value={personalDetails[personalDetailsInput.name]}
             onChange={onChange}
-            errorMessage={input.errorMessage}
-            pattern={input.pattern}
             setPersonalDetails={setPersonalDetails}
           />
         </React.Fragment>
