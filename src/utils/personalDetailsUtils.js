@@ -37,3 +37,4 @@ export const personalDetailsInput = [
     errorMessage: "It Should Be A Valid Address. Max Word Limit is 30.",
   },
 ];
+
