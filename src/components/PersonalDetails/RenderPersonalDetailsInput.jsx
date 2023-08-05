@@ -6,23 +6,38 @@ const RenderPersonalDetailsInput = (props) => {
   return (
     <div className="h-1/4 flex flex-col justify-center items-center">
       {/* Centered text in the top div */}
-      <div className="flex flex-col items-center justify-center h-1/2">
-        <p className="text-center text-4xl font-bold">
+      <div className="flex flex-col items-center justify-center h-1/4">
+        <p className="text-center text-2xl font-bold">
           Name: {personalDetails.fullName}
         </p>
       </div>
 
-      {/* Bottom div with 3 paragraphs, wrapped to next line when necessary */}
-      <div className="flex flex-wrap justify-evenly h-1/2 w-full">
-        <p className="text-center w-full md:w-auto">
-          Email: {personalDetails.email}
-        </p>
-        <p className="text-center w-full md:w-auto">
-          Phone Number: {personalDetails.phoneNumber}
-        </p>
-        <p className="text-center w-full md:w-auto">
-          Address: {personalDetails.address}
-        </p>
+      {/* Bottom div with labels and rendering vertically aligned */}
+      <div className="flex flex-col h-3/4 w-full">
+        <div className="text-left text-xl font-sans w-full md:w-auto">
+          <p>
+            <span className="font-bold font-sans">Email:</span>{" "}
+            <span className="border rounded p-2 bg-gray-100 flex w-full justify-between h-8 items-center">
+              <span>{personalDetails.email}</span>
+            </span>
+          </p>
+        </div>
+        <div className="text-left text-xl w-full md:w-auto">
+          <p>
+            <span className="font-bold font-sans">Phone Number:</span>{" "}
+            <span className="border rounded p-2 bg-gray-100 flex w-full justify-between h-8 items-center">
+              <span>{personalDetails.phoneNumber}</span>
+            </span>
+          </p>
+        </div>
+        <div className="text-left text-xl w-full md:w-auto">
+          <p>
+            <span className="font-bold font-sans">Address:</span>{" "}
+            <span className="border rounded p-2 bg-gray-100 flex w-full justify-between h-8 items-center">
+              <span>{personalDetails.address}</span>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );
