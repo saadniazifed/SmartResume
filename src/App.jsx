@@ -2,6 +2,7 @@ import { useState } from "react";
 import PersonalDetailsInput from "./components/PersonalDetails/PersonalDetailsInput";
 import RenderPersonalDetailsInput from "./components/PersonalDetails/RenderPersonalDetailsInput";
 import EducationDetailsInput from "./components/EducationDetails/EducationDetailsInput";
+import RenderEducationDetails from "./components/EducationDetails/RenderEducationDetails";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -45,20 +46,7 @@ function App() {
       </div>
       <div className="w-2/5 border p-4 bg-gray-200 min-h-screen">
         <RenderPersonalDetailsInput personalDetails={personalDetails} />
-
-        {educationInfo.length > 0
-          ? educationInfo.map((info, index) => (
-              <div key={index}>
-                {info.school && <p>School: {info.school}</p>}
-                {info.titleOfStudy && (
-                  <p>Title of Study: {info.titleOfStudy}</p>
-                )}
-                {info.startDate && <p>Start Date: {info.startDate}</p>}
-                {info.endDate && <p>End Date: {info.endDate}</p>}
-                <hr />
-              </div>
-            ))
-          : null}
+        <RenderEducationDetails educationInfo={educationInfo} />
       </div>
     </div>
   );
