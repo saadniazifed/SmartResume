@@ -5,7 +5,7 @@ const RenderEducationDetails = (props) => {
 
   return (
     <>
-      <div className="flex flex-col h-3/4 w-full">
+      <div className="flex flex-col w-full">
         {educationInfo.length > 0 && (
           <div className="mb-2">
             <span className="font-bold text-xl font-sans">
@@ -41,6 +41,11 @@ const RenderEducationDetails = (props) => {
                   {info.endDate}
                 </p>
               )}
+
+              {!info.school &&
+                !info.titleOfStudy &&
+                !info.startDate &&
+                !info.endDate && <p>No education history available</p>}
             </div>
           ))}
       </div>
