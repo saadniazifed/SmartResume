@@ -3,6 +3,8 @@ import PersonalDetailsInput from "./components/PersonalDetails/PersonalDetailsIn
 import RenderPersonalDetailsInput from "./components/PersonalDetails/RenderPersonalDetailsInput";
 import EducationDetailsInput from "./components/EducationDetails/EducationDetailsInput";
 import RenderEducationDetails from "./components/EducationDetails/RenderEducationDetails";
+import WorkExperienceInput from "./components/WorkExperience/WorkExperienceInput";
+import RenderWorkExperience from "./components/WorkExperience/RenderWorkExperience";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -28,6 +30,22 @@ function App() {
     endDate: "",
   });
 
+  const [workExperience, setWorkExperience] = useState([
+    {
+      company: "",
+      jobTitle: "",
+      startDate: "",
+      endDate: "",
+    },
+  ]);
+
+  const [workInput, setWorkInput] = useState({
+    company: "",
+    jobTitle: "",
+    startDate: "",
+    endDate: "",
+  });
+
   return (
     <div className="flex justify-evenly min-h-screen">
       <div className="w-2/5 border p-4 bg-gray-100 min-h-screen">
@@ -42,11 +60,18 @@ function App() {
             inputValues={inputValues}
             educationInfo={educationInfo}
           />
+
+          <WorkExperienceInput
+            workInput={workInput}
+            setWorkInput={setWorkInput}
+            setWorkExperience={setWorkExperience}
+          />
         </form>
       </div>
       <div className="w-2/5 border p-4 bg-gray-200 min-h-screen">
         <RenderPersonalDetailsInput personalDetails={personalDetails} />
         <RenderEducationDetails educationInfo={educationInfo} />
+        <RenderWorkExperience workExperience={workExperience} />
       </div>
     </div>
   );

@@ -76,3 +76,42 @@ export const educationDetailsInput = [
     errorMessage: "End date is required.",
   },
 ];
+
+export const workExperienceDetailsInput = [
+  {
+    label: "Company",
+    name: "company",
+    placeholder: "Enter the company name",
+    type: "text",
+    id: 1,
+    required: true,
+    errorMessage: "Company name is required.",
+  },
+  {
+    label: "Job Title",
+    name: "jobTitle",
+    placeholder: "Enter your job title",
+    type: "text",
+    id: 2,
+    required: true,
+    errorMessage: "Job title is required.",
+  },
+  {
+    label: "Start Date",
+    name: "startDate",
+    placeholder: "Enter start date",
+    type: "date",
+    id: 3,
+    required: true,
+    errorMessage: "Start date is required.",
+  },
+  {
+    label: "End Date",
+    name: "endDate",
+    placeholder: "Enter end date",
+    type: "date",
+    id: 4,
+    required: true,
+    errorMessage: "End date is required.",
+  },
+];
