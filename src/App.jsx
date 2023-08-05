@@ -1,10 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import PersonalDetailsInput from "./components/PersonalDetails/PersonalDetailsInput";
 import RenderPersonalDetailsInput from "./components/PersonalDetails/RenderPersonalDetailsInput";
 import EducationDetailsInput from "./components/EducationDetails/EducationDetailsInput";
 import RenderEducationDetails from "./components/EducationDetails/RenderEducationDetails";
 import WorkExperienceInput from "./components/WorkExperience/WorkExperienceInput";
 import RenderWorkExperience from "./components/WorkExperience/RenderWorkExperience";
+import HobbiesInput from "./components/Hobbies/HobbiesInput";
+import RenderHobbies from "./components/Hobbies/RenderHobbies";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -56,15 +58,6 @@ function App() {
     hobbies: "",
   });
 
-  const handleHobbiesInputChange = (e) => {
-    setHobbiesInput({ ...hobbiesInput, [e.target.name]: e.target.value });
-  };
-
-  const handleAddHobby = () => {
-    setHobbies([...hobbies, hobbiesInput]);
-    setHobbiesInput({ hobby: "" });
-  };
-
   return (
     <div className="flex justify-evenly min-h-screen">
       <div className="w-2/5 border p-4 bg-gray-100 min-h-screen">
@@ -84,28 +77,20 @@ function App() {
             setWorkInput={setWorkInput}
             setWorkExperience={setWorkExperience}
           />
-          <br />
-          <span>Enter Hobbies</span>
-          <input
-            type="text"
-            name="hobby"
-            value={hobbiesInput.hobby}
-            onChange={handleHobbiesInputChange}
-            placeholder="Enter a hobby"
+
+          <HobbiesInput
+            setHobbiesInput={setHobbiesInput}
+            hobbiesInput={hobbiesInput}
+            setHobbies={setHobbies}
+            hobbies={hobbies}
           />
-          <button onClick={handleAddHobby}>Add</button>{" "}
         </form>
       </div>
       <div className="w-2/5 border p-4 bg-gray-200 min-h-screen">
         <RenderPersonalDetailsInput personalDetails={personalDetails} />
         <RenderEducationDetails educationInfo={educationInfo} />
         <RenderWorkExperience workExperience={workExperience} />
-        <span>Hobbies:</span>
-        <ul>
-          {hobbies?.map((hobby, index) => (
-            <li key={index}>{hobby.hobby}</li>
-          ))}
-        </ul>
+        <RenderHobbies hobbies={hobbies} />
       </div>
     </div>
   );
