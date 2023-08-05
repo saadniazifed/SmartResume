@@ -4,12 +4,10 @@ const RenderPersonalDetailsInput = (props) => {
   const { personalDetails } = props;
 
   return (
-    <div className="h-1/4 flex flex-col justify-center items-center">
+    <div className="h-1/4 flex flex-col">
       {/* Centered text in the top div */}
-      <div className="flex flex-col items-center justify-center h-1/4">
-        <p className="text-center text-2xl font-bold">
-          Name: {personalDetails.fullName}
-        </p>
+      <div className="flex flex-col h-1/4">
+        <p className="text-2xl font-bold">Name: {personalDetails.fullName}</p>
       </div>
 
       {/* Bottom div with labels and rendering vertically aligned */}
