@@ -36,6 +36,14 @@ export const personalDetailsInput = [
     required: true,
     errorMessage: "It Should Be A Valid Address. Max Word Limit is 30.",
   },
+  {
+    label: "Small Description",
+    name: "smallDescription",
+    placeholder: "Enter a small description",
+    type: "textarea",
+    id: 5,
+    required: false,
+  },
 ];
 
 export const educationDetailsInput = [

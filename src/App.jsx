@@ -14,6 +14,7 @@ function App() {
     email: "",
     phoneNumber: "",
     address: "",
+    smallDescription: "",
   });
 
   const [educationInfo, setEducationInfo] = useState([

@@ -25,6 +25,7 @@ const PersonalDetailsInput = (props) => {
             value={personalDetails[personalDetailsInput.name]}
             onChange={onChange}
             setPersonalDetails={setPersonalDetails}
+            type={input.type}
           />
         </React.Fragment>
       ))}

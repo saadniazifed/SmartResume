@@ -7,7 +7,7 @@ const RenderEducationDetails = (props) => {
     <>
       <div className="flex flex-col w-full">
         {educationInfo.length > 0 && (
-          <div className="mb-2">
+          <div className="mb-2 mt-5">
             <span className="font-bold text-xl font-sans">
               Education Details:
             </span>

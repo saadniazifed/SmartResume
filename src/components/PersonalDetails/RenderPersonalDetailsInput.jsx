@@ -36,6 +36,15 @@ const RenderPersonalDetailsInput = (props) => {
             </span>
           </p>
         </div>
+
+        <div className="text-left text-xl w-full md:w-auto">
+          <p>
+            <span className="font-bold font-sans">Small Description:</span>{" "}
+            <textarea className="border rounded p-2 bg-gray-100 w-full inline-block break-all">
+              {personalDetails.smallDescription}
+            </textarea>
+          </p>
+        </div>
       </div>
     </div>
   );

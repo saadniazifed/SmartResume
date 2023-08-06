@@ -23,7 +23,7 @@ const EducationDetailsInput = (props) => {
 
   return (
     <>
-      <span className="text-2xl font-semibold mt-6  block">
+      <span className="text-2xl font-semibold mt-6 block">
         Educational Details
       </span>
 
