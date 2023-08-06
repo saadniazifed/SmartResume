@@ -59,6 +59,10 @@ function App() {
     hobbies: "",
   });
 
+  const [avatarImage, setAvatarImage] = useState(
+    "https://placekitten.com/250/250"
+  );
+
   return (
     <div className="flex justify-evenly min-h-screen">
       <div className="w-2/5 border p-4 bg-gray-100 min-h-screen">
@@ -66,6 +70,8 @@ function App() {
           <PersonalDetailsInput
             personalDetails={personalDetails}
             setPersonalDetails={setPersonalDetails}
+            setAvatarImage={setAvatarImage}
+            avatarImage={avatarImage}
           />
           <EducationDetailsInput
             setInputValues={setInputValues}
@@ -88,7 +94,10 @@ function App() {
         </form>
       </div>
       <div className="w-2/5 border p-4 bg-gray-200 min-h-screen">
-        <RenderPersonalDetailsInput personalDetails={personalDetails} />
+        <RenderPersonalDetailsInput
+          personalDetails={personalDetails}
+          avatarImage={avatarImage}
+        />
         <RenderEducationDetails educationInfo={educationInfo} />
         <RenderWorkExperience workExperience={workExperience} />
         <RenderHobbies hobbies={hobbies} />

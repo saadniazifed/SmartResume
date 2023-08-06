@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { personalDetailsInput } from "../../utils/personalDetailsUtils";
 import FormInput from "../FormInput";
 import PropTypes from "prop-types";
+import Avatar from "../Avatar/Avatar";
 
 const PersonalDetailsInput = (props) => {
-  const { setPersonalDetails, personalDetails } = props;
-
+  const { setPersonalDetails, personalDetails, avatarImage, setAvatarImage } =
+    props;
   const onChange = (e) => {
     setPersonalDetails({
       ...personalDetails,
@@ -15,9 +16,13 @@ const PersonalDetailsInput = (props) => {
 
   return (
     <>
-      <h3 className="text-2xl font-semibold mt-6 mb-3 block">
-        Personal Details
-      </h3>
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-semibold mt-6 mb-3 block">
+          Personal Details
+        </h3>
+        <Avatar setAvatarImage={setAvatarImage} avatarImage={avatarImage} />
+      </div>
+
       {personalDetailsInput.map((input) => (
         <React.Fragment key={input.id}>
           <FormInput

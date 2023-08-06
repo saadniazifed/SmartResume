@@ -1,13 +1,18 @@
 import PropTypes from "prop-types";
 
 const RenderPersonalDetailsInput = (props) => {
-  const { personalDetails } = props;
+  const { personalDetails, avatarImage } = props;
 
   return (
     <div className="h-1/4 flex flex-col">
       {/* Centered text in the top div */}
-      <div className="flex flex-col h-1/4">
+      <div className="flex justify-between items-center h-1/4">
         <p className="text-2xl font-bold">Name: {personalDetails.fullName}</p>
+        <img
+          className="rounded-full w-16 h-16 object-cover"
+          src={avatarImage}
+          alt="Avatar"
+        />
       </div>
 
       {/* Bottom div with labels and rendering vertically aligned */}
