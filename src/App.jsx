@@ -7,6 +7,7 @@ import WorkExperienceInput from "./components/WorkExperience/WorkExperienceInput
 import RenderWorkExperience from "./components/WorkExperience/RenderWorkExperience";
 import HobbiesInput from "./components/Hobbies/HobbiesInput";
 import RenderHobbies from "./components/Hobbies/RenderHobbies";
+import RenderDetails from "./components/RenderDetails/RenderDetails";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -98,9 +99,9 @@ function App() {
           personalDetails={personalDetails}
           avatarImage={avatarImage}
         />
-        <RenderEducationDetails educationInfo={educationInfo} />
-        <RenderWorkExperience workExperience={workExperience} />
-        <RenderHobbies hobbies={hobbies} />
+        <RenderDetails details={educationInfo} title="Education Details" />
+        <RenderDetails details={workExperience} title="Work Experience" />
+        <RenderDetails hobbies={hobbies} title="Hobbies" />
       </div>
     </div>
   );
