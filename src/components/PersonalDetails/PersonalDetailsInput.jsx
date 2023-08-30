@@ -15,9 +15,9 @@ const PersonalDetailsInput = (props) => {
   };
 
   return (
-    <>
+    <form className="border bg-[#1c1c1c] rounded-xl">
       <div className="flex justify-between items-center">
-        <h3 className="text-2xl font-semibold mt-6 mb-3 block">
+        <h3 className="text-2xl font-semibold mt-6 mb-3 block text-white px-5">
           Personal Details
         </h3>
         <Avatar setAvatarImage={setAvatarImage} avatarImage={avatarImage} />
@@ -34,7 +34,8 @@ const PersonalDetailsInput = (props) => {
           />
         </React.Fragment>
       ))}
-    </>
+
+    </form>
   );
 };
 

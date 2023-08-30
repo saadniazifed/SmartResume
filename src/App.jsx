@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PersonalDetailsInput from "./components/PersonalDetails/PersonalDetailsInput";
 import RenderPersonalDetailsInput from "./components/PersonalDetails/RenderPersonalDetailsInput";
 import EducationDetailsInput from "./components/EducationDetails/EducationDetailsInput";
-import RenderEducationDetails from "./components/EducationDetails/RenderEducationDetails";
 import WorkExperienceInput from "./components/WorkExperience/WorkExperienceInput";
-import RenderWorkExperience from "./components/WorkExperience/RenderWorkExperience";
 import HobbiesInput from "./components/Hobbies/HobbiesInput";
-import RenderHobbies from "./components/Hobbies/RenderHobbies";
 import RenderDetails from "./components/RenderDetails/RenderDetails";
+import "./assets/style.css";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -65,9 +63,9 @@ function App() {
   );
 
   return (
-    <div className="flex justify-evenly min-h-screen">
-      <div className="w-2/5 border p-4 bg-gray-100 min-h-screen">
-        <form>
+    <div className="flex justify-evenly min-h-screen bg-black">
+      <div className="w-full md:w-1/2 lg:w-1/3  p-4 min-h-screen">
+        <>
           <PersonalDetailsInput
             personalDetails={personalDetails}
             setPersonalDetails={setPersonalDetails}
@@ -92,14 +90,21 @@ function App() {
             setHobbies={setHobbies}
             hobbies={hobbies}
           />
-        </form>
+        </>
       </div>
-      <div className="w-2/5 border p-4 bg-gray-200 min-h-screen">
+      <div
+        className="w-full relative mt-5 rounded-[45px]  mb-5 md:w-1/2 lg:w-2/3 custom-gradient box-shadow  mx-5  p-4 custom-gradient  min-h-screen shadow-md"
+        style={{
+          boxShadow: "0 5px 15px #5c360d,0 -5px 30px #5c360d",
+        }}
+      >
         <RenderPersonalDetailsInput
           personalDetails={personalDetails}
           avatarImage={avatarImage}
         />
+        <hr className="mb-5" />
         <RenderDetails details={educationInfo} title="Education Details" />
+        <hr className="mb-5 mt-5" />
         <RenderDetails details={workExperience} title="Work Experience" />
         <RenderDetails hobbies={hobbies} title="Hobbies" />
       </div>

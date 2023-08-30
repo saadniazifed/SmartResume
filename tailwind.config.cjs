@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Poppins", "system-ui"],
+      alfa: ["Alfa Slab One", "sans"],
       body: ['"Poppins"'],
     },
   },

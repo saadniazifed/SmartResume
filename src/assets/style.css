@@ -1,0 +1,14 @@
+.custom-gradient {
+  background: linear-gradient(
+    124deg,
+    #3b82f6 5%,
+    /* Transparent gold color */ rgba(0, 0, 0, 0.5) 29%,
+    /* Transparent black color */ rgba(0, 0, 0, 0.5) 73%,
+    /* Transparent black color */ #3b82f6 94% /* Transparent gold color */
+  );
+}
+
+.custom-bow-shadow {
+  box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.5),
+    0 2px 4px -1px rgba(251, 191, 36, 0.5);
+}
