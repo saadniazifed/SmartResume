@@ -15,16 +15,16 @@ const RenderPersonalDetailsInput = (props) => {
     <div className="h-1/4 flex flex-col">
       {/* Centered text in the top div */}
       <div className="flex justify-between items-center h-1/4">
-        <div className="flex items-center justify-between border-sky-400 border flex-[0.65]">
+        <div className="flex items-center  flex-[0.65]">
           <FontAwesomeIcon icon={faUser} color="white" />
-          <p className="text-4xl font-bold text-white font-alfa">
+          <p className="text-4xl font-bold ms-3 text-white font-alfa">
             {personalDetails.fullName}
           </p>
         </div>
 
         <div>
           <img
-            className="rounded-full w-16 h-16 object-cover self-end"
+            className="rounded-full w-15 h-25 object-cover"
             src={avatarImage}
             alt="Avatar"
           />
@@ -33,18 +33,18 @@ const RenderPersonalDetailsInput = (props) => {
 
       {/* Bottom div with labels and rendering vertically aligned */}
       <div className="flex flex-col h-3/4 w-full">
-        <div className="text-left text-xl font-sans w-full md:w-auto">
-          <p className="flex">
+        <div className="text-left text-lg font-sans w-full md:w-auto">
+          <p className="flex items-center">
             <span className="font-bold font-sans">
               <FontAwesomeIcon icon={faEnvelope} color="white" />
             </span>
-            <span className="text-white rounded p-2 flex w-full justify-between h-8 items-center">
+            <span className="text-white text-lg font-rubik rounded ms-3 flex w-full justify-between h-8 items-center">
               <span>{personalDetails.email}</span>
             </span>
           </p>
         </div>
-        <div className="text-left text-xl w-full md:w-auto">
-          <p className="flex">
+        <div className="text-left text-lg w-full md:w-auto">
+          <p className="flex items-center">
             <span className="font-bold font-sans">
               <FontAwesomeIcon icon={faPhone} color="white" />
             </span>
@@ -53,8 +53,8 @@ const RenderPersonalDetailsInput = (props) => {
             </span>
           </p>
         </div>
-        <div className="text-left text-xl w-full md:w-auto">
-          <p>
+        <div className="text-left text-lg w-full md:w-auto">
+          <p className="flex items-center">
             <span className="font-bold font-sans">
               <FontAwesomeIcon icon={faMapMarkerAlt} color="white" />
             </span>
@@ -64,14 +64,14 @@ const RenderPersonalDetailsInput = (props) => {
           </p>
         </div>
 
-        <div className="text-left text-xl w-full md:w-auto">
-          <p>
+        <div className="text-left text-md italic w-full md:w-auto">
+          <p className="flex items-center">
             <span className="font-bold text-white font-sans">
               <FontAwesomeIcon icon={faAlignLeft} color="white" />
             </span>
-            <textarea className="text-white rounded p-2 w-full inline-block break-all bg-transparent">
+            <span className="text-white rounded ms-2 w-full inline-block break-all bg-transparent">
               {personalDetails.smallDescription}
-            </textarea>
+            </span>
           </p>
         </div>
       </div>
@@ -85,6 +85,7 @@ RenderPersonalDetailsInput.propTypes = {
     email: PropTypes.string.isRequired,
     phoneNumber: PropTypes.number.isRequired,
     address: PropTypes.string.isRequired,
+    smallDescription: PropTypes.string.isRequired,
   }).isRequired,
   setPersonalDetails: PropTypes.func.isRequired,
 };

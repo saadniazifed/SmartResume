@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ["Poppins", "system-ui"],
       alfa: ["Alfa Slab One", "sans"],
+      rubik: ["Rubik", "sans"],
       body: ['"Poppins"'],
     },
   },

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const FormInput = (props) => {
-  const { label, onChange, value, type, ...input } = props;
+  const { label, onChange, maxLength, value, type, ...input } = props;
 
   const isTextArea = type === "textarea";
 
@@ -19,7 +19,7 @@ const FormInput = (props) => {
           {...input}
           onChange={onChange}
           value={value}
-          maxLength={150}
+          maxLength={maxLength}
         />
       ) : (
         <>
@@ -28,6 +28,7 @@ const FormInput = (props) => {
             {...input}
             onChange={onChange}
             value={value}
+            maxLength={maxLength}
           />
         </>
       )}

@@ -9,18 +9,30 @@ const WorkExperienceInput = (props) => {
 
   const handleWorkExperience = (e) => {
     e.preventDefault();
-    setWorkExperience((prevInfo) => [...prevInfo, { ...workInput }]);
-    setWorkInput({
-      company: "",
-      jobTitle: "",
-      startDate: "",
-      endDate: "",
-    });
+    if (
+      workInput.company === "" ||
+      workInput.jobTitle === "" ||
+      workInput.startDate === "" ||
+      workInput.endDate === ""
+    ) {
+      alert("Please fill all the fields");
+      return;
+    } else {
+      setWorkExperience((prevInfo) => [...prevInfo, { ...workInput }]);
+      setWorkInput({
+        company: "",
+        jobTitle: "",
+        startDate: "",
+        endDate: "",
+      });
+    }
   };
 
   return (
-    <>
-      <span className="text-2xl font-semibold mt-6  block">Work Details</span>
+    <form className="border bg-[#1c1c1c] rounded-xl mt-3">
+      <span className="text-2xl font-semibold mt-6  block font-alfa text-white mx-4">
+        Work Details
+      </span>
       <br />
       <WorkExperienceInputMap
         workInput={workInput}
@@ -28,11 +40,11 @@ const WorkExperienceInput = (props) => {
       />
       <button
         onClick={handleWorkExperience}
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="mx-4 mb-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
         Add Details
       </button>
-    </>
+    </form>
   );
 };
 

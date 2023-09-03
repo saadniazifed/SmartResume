@@ -8,6 +8,7 @@ export const personalDetailsInput = [
     required: true,
     errorMessage:
       "Full Name Should Not Contain Any Numbers Or Special Characters. Max Limit is 25 words.",
+    maxLength: 14,
   },
   {
     label: "Email",
@@ -17,6 +18,7 @@ export const personalDetailsInput = [
     id: 2,
     required: true,
     errorMessage: "It Should Be A Valid Email Address. Please Try Again.",
+    maxLength: 25,
   },
   {
     label: "Phone Number",
@@ -26,6 +28,7 @@ export const personalDetailsInput = [
     required: true,
     id: 3,
     errorMessage: "It Should Be A Valid Phone Number. Please Try Again.",
+    maxLength: 20,
   },
   {
     label: "Address",
@@ -34,7 +37,8 @@ export const personalDetailsInput = [
     type: "text",
     id: 4,
     required: true,
-    errorMessage: "It Should Be A Valid Address. Max Word Limit is 30.",
+    errorMessage: "It Should Be A Valid Address. Max Word Limit is 60.",
+    maxLength: 60,
   },
   {
     label: "Small Description",
@@ -43,6 +47,7 @@ export const personalDetailsInput = [
     type: "textarea",
     id: 5,
     required: false,
+    maxLength: 300,
   },
 ];
 
@@ -55,6 +60,7 @@ export const educationDetailsInput = [
     id: 1,
     required: true,
     errorMessage: "School name is required.",
+    maxLength: 20,
   },
   {
     label: "Title of Study",
@@ -64,6 +70,7 @@ export const educationDetailsInput = [
     id: 2,
     required: true,
     errorMessage: "Title of study is required.",
+    maxLength: 40,
   },
   {
     label: "Start Date",
@@ -94,6 +101,7 @@ export const workExperienceDetailsInput = [
     id: 1,
     required: true,
     errorMessage: "Company name is required.",
+    maxLength: 40,
   },
   {
     label: "Job Title",
@@ -103,6 +111,7 @@ export const workExperienceDetailsInput = [
     id: 2,
     required: true,
     errorMessage: "Job title is required.",
+    maxLength: 40,
   },
   {
     label: "Start Date",

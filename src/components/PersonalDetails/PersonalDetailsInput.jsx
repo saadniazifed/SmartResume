@@ -14,6 +14,7 @@ const PersonalDetailsInput = (props) => {
     });
   };
 
+
   return (
     <form className="border bg-[#1c1c1c] rounded-xl">
       <div className="flex justify-between items-center">
@@ -31,10 +32,10 @@ const PersonalDetailsInput = (props) => {
             onChange={onChange}
             setPersonalDetails={setPersonalDetails}
             type={input.type}
+            maxLength={input.maxLength}
           />
         </React.Fragment>
       ))}
-
     </form>
   );
 };

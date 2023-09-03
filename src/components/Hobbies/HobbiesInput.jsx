@@ -8,13 +8,20 @@ const HobbiesInput = (props) => {
 
   const handleAddHobby = (e) => {
     e.preventDefault();
-    setHobbies([...hobbies, hobbiesInput]);
-    setHobbiesInput({ hobby: "" });
+    if (hobbies.hobbies === "") {
+      alert("Kindly tell atleast one hobby about yourself.");
+      return;
+    } else {
+      setHobbies([...hobbies, hobbiesInput]);
+      setHobbiesInput({ hobby: "" });
+    }
   };
 
   return (
-    <>
-      <h2 className="text-2xl font-semibold mt-5">Enter Hobbies</h2>
+    <form className="border bg-[#1c1c1c] rounded-xl mt-3 p-10">
+      <h2 className="text-2xl font-semibold mt-5 font-alfa text-white mb-5">
+        Enter Hobbies
+      </h2>
       <input
         type="text"
         name="hobby"
@@ -29,7 +36,7 @@ const HobbiesInput = (props) => {
       >
         Add
       </button>
-    </>
+    </form>
   );
 };
 

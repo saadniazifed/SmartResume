@@ -12,18 +12,28 @@ const EducationDetailsInput = (props) => {
 
   const handleEducationDetails = (e) => {
     e.preventDefault();
-    setEducationInfo((prevInfo) => [...prevInfo, { ...inputValues }]);
-    setInputValues({
-      school: "",
-      titleOfStudy: "",
-      startDate: "",
-      endDate: "",
-    });
+    if (
+      inputValues.school === "" ||
+      inputValues.titleOfStudy === "" ||
+      inputValues.startDate === "" ||
+      inputValues.endDate === ""
+    ) {
+      alert("Please fill all the fields");
+      return;
+    } else {
+      setEducationInfo((prevInfo) => [...prevInfo, { ...inputValues }]);
+      setInputValues({
+        school: "",
+        titleOfStudy: "",
+        startDate: "",
+        endDate: "",
+      });
+    }
   };
 
   return (
-    <>
-      <span className="text-2xl font-semibold mt-6 block">
+    <form className="border bg-[#1c1c1c] rounded-xl mt-3">
+      <span className="text-2xl font-semibold mt-6 mx-4 block text-white font-alfa">
         Educational Details
       </span>
 
@@ -41,11 +51,11 @@ const EducationDetailsInput = (props) => {
       ))}
       <button
         onClick={handleEducationDetails}
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mx-5 mb-5 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
         Add Details
       </button>
-    </>
+    </form>
   );
 };
 
