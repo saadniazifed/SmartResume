@@ -40,7 +40,7 @@ const Avatar = (props) => {
         />
       </div>
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+        <div className="fixed z-[15] inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-6 rounded shadow-lg">
             <h2 className="mb-4 text-xl font-semibold">Upload Avatar</h2>
             <input
