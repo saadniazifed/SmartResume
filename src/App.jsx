@@ -106,7 +106,8 @@ function App() {
         <RenderDetails details={educationInfo} title="Education Details" />
         <hr className="mb-5 mt-5" />
         <RenderDetails details={workExperience} title="Work Experience" />
-        <RenderDetails hobbies={hobbies} title="Hobbies" />
+        <hr className="mb-5 mt-5" />
+        <RenderDetails details={hobbies} title="Hobbies" />
       </div>
     </div>
   );

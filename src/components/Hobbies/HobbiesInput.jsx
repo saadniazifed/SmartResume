@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 const HobbiesInput = (props) => {
   const { setHobbiesInput, hobbiesInput, setHobbies, hobbies } = props;
+
   const handleHobbiesInputChange = (e) => {
     setHobbiesInput({ ...hobbiesInput, [e.target.name]: e.target.value });
   };
@@ -13,7 +14,7 @@ const HobbiesInput = (props) => {
       return;
     } else {
       setHobbies([...hobbies, hobbiesInput]);
-      setHobbiesInput({ hobby: "" });
+      setHobbiesInput({ hobbies: "" });
     }
   };
 
@@ -24,7 +25,7 @@ const HobbiesInput = (props) => {
       </h2>
       <input
         type="text"
-        name="hobby"
+        name="hobbies"
         value={hobbiesInput.hobby}
         onChange={handleHobbiesInputChange}
         placeholder="Enter a hobby"
@@ -43,12 +44,12 @@ const HobbiesInput = (props) => {
 HobbiesInput.propTypes = {
   setHobbiesInput: PropTypes.func.isRequired,
   hobbiesInput: PropTypes.shape({
-    hobby: PropTypes.string.isRequired,
+    hobbies: PropTypes.string.isRequired,
   }).isRequired,
   setHobbies: PropTypes.func.isRequired,
   hobbies: PropTypes.arrayOf(
     PropTypes.shape({
-      hobby: PropTypes.string.isRequired,
+      hobbies: PropTypes.string.isRequired,
     })
   ).isRequired,
 };
