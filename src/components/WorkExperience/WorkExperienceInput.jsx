@@ -1,7 +1,17 @@
 import WorkExperienceInputMap from "./WorkExperienceInputMap";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addWorkDetails } from "../features/workDetailSlice/workDetailSlice";
 
-const WorkExperienceInput = (props) => {
-  const { workInput, setWorkInput, setWorkExperience } = props;
+const WorkExperienceInput = () => {
+  const dispatch = useDispatch();
+
+  const [workInput, setWorkInput] = useState({
+    company: "",
+    jobTitle: "",
+    startDate: "",
+    endDate: "",
+  });
 
   const handleWorkInput = (field, value) => {
     setWorkInput((prevValues) => ({ ...prevValues, [field]: value }));
@@ -18,7 +28,7 @@ const WorkExperienceInput = (props) => {
       alert("Please fill all the fields");
       return;
     } else {
-      setWorkExperience((prevInfo) => [...prevInfo, { ...workInput }]);
+      dispatch(addWorkDetails({ ...workInput }));
       setWorkInput({
         company: "",
         jobTitle: "",

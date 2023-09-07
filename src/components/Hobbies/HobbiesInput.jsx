@@ -1,7 +1,15 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addHobbyDetails } from "../features/hobbySlice/hobbySlice";
 
-const HobbiesInput = (props) => {
-  const { setHobbiesInput, hobbiesInput, setHobbies, hobbies } = props;
+const HobbiesInput = () => {
+  const hobbies = useSelector((state) => state.hobbyDetails);
+  const dispatch = useDispatch();
+
+  const [hobbiesInput, setHobbiesInput] = useState({
+    hobbies: "",
+  });
 
   const handleHobbiesInputChange = (e) => {
     setHobbiesInput({ ...hobbiesInput, [e.target.name]: e.target.value });
@@ -13,7 +21,7 @@ const HobbiesInput = (props) => {
       alert("Kindly tell atleast one hobby about yourself.");
       return;
     } else {
-      setHobbies([...hobbies, hobbiesInput]);
+      dispatch(addHobbyDetails(hobbiesInput));
       setHobbiesInput({ hobbies: "" });
     }
   };

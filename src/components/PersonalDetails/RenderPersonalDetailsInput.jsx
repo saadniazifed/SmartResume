@@ -7,9 +7,12 @@ import {
   faAlignLeft,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 const RenderPersonalDetailsInput = (props) => {
-  const { personalDetails, avatarImage } = props;
+  const { avatarImage } = props;
+
+  const personalDetails = useSelector((state) => state.personalDetails);
 
   return (
     <div className="h-1/4 flex justify-between">
@@ -89,6 +92,7 @@ RenderPersonalDetailsInput.propTypes = {
     smallDescription: PropTypes.string.isRequired,
   }).isRequired,
   setPersonalDetails: PropTypes.func.isRequired,
+  avatarImage: PropTypes.string.isRequired,
 };
 
 export default RenderPersonalDetailsInput;

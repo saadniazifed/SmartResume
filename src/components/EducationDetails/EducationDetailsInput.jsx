@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { educationDetailsInput } from "../../utils/personalDetailsUtils";
 import FormInput from "../FormInput";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { addEducationDetail } from "../features/educationDetails/educationDetailSlice";
 
-const EducationDetailsInput = (props) => {
-  const { setInputValues, setEducationInfo, inputValues } = props;
+const EducationDetailsInput = () => {
+  const dispatch = useDispatch();
+
+  const [inputValues, setInputValues] = useState({
+    school: "",
+    titleOfStudy: "",
+    startDate: "",
+    endDate: "",
+  });
 
   const handleInputChange = (field, value) => {
     setInputValues((prevValues) => ({ ...prevValues, [field]: value }));
@@ -21,7 +30,7 @@ const EducationDetailsInput = (props) => {
       alert("Please fill all the fields");
       return;
     } else {
-      setEducationInfo((prevInfo) => [...prevInfo, { ...inputValues }]);
+      dispatch(addEducationDetail({ ...inputValues }));
       setInputValues({
         school: "",
         titleOfStudy: "",
